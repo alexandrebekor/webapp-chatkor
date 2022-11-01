@@ -1,5 +1,6 @@
-import express from "express"
-const PORT = 3333
-const app = express()
+import { server } from "./http"
+import "./websocket/ChatService"
 
-app.listen(PORT, () => console.log(`Running on port ${PORT}`))
+const PORT = 3333
+
+server.listen(PORT, () => console.log(`Running on port ${PORT}`))
