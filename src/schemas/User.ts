@@ -1,6 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose";
 
-export type User = Document & {
+export type UserProps = Document & {
   email: string
   socket_id: string
   name: string
@@ -14,6 +14,6 @@ const UserSchema = new Schema({
   avatar: String
 })
 
-const User = mongoose.model<User>("Users", UserSchema)
+const User = mongoose.model<UserProps>("Users", UserSchema)
 
 export { User }

@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  webapp-chatkor-database:
+    container_name: webapp-chatkor-database
+    image: mongo:latest
+    volumes:
+      - ./mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped

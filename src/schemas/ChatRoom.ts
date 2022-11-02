@@ -1,9 +1,9 @@
 import mongoose, { Document, Schema } from "mongoose"
-import type { User } from './User'
+import type { UserProps } from './User'
 import { v4 as UuidV4 } from "uuid"
 
 type ChatRoom = Document & {
-  idUsers: User[]
+  idUsers: UserProps[]
   idChatRoom: string
 }
 
