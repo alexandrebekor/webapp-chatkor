@@ -12,8 +12,6 @@ mongoose.connect("mongodb://localhost/chatkor")
 
 app.use(express.static(path.join(__dirname, "..", "public")))
 
-io.on('connection', (socket) => {
-  console.log(socket.id)
-})
+io.on('connection', (socket) => {})
 
 export { server, io }

@@ -1,4 +1,5 @@
 const socket = io("http://localhost:3333")
+let roomId = ""
 
 const onLoad = () => {
   const urlParams = new URLSearchParams(window.location.search)
@@ -40,5 +41,16 @@ const addUserInList = (user) => {
     </li>
   `
 }
+
+document.getElementById("users_list").addEventListener("click", (event) => {
+  if(event.target && event.target.matches("li.user_name_list")) {
+    const userId = event.target.getAttribute("idUser")
+
+    socket.emit("start_chat", { userId }, (room) => {
+      console.log(room)
+      // roomId = room.idChatRoom
+    })
+  }
+})
 
 onLoad()
